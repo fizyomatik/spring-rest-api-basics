@@ -1,11 +1,23 @@
-name: Spring Workflow
+name: Spring Boot CI
 
 on: push
 jobs:
-  fist-job:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print first
-        run: echo "hello ubuntu user"
-      - name: Print second
-        run: echo "done"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build and run tests
+        run: mvn clean test
+
+
+
+
