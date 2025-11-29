@@ -1,6 +1,6 @@
 name: Spring Workflow
 
-on: workflow_dispatch
+on: push
 jobs:
   fist-job:
     runs-on: ubuntu-latest
