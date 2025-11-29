@@ -2,7 +2,7 @@ name: Spring Boot CI
 
 on: push
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,9 +14,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'maven'
-  test:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Build and run tests
         run: mvn clean test
 
