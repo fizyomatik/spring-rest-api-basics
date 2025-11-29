@@ -1,0 +1,11 @@
+name: Spring Workflow
+
+on: workflow_dispatch
+jobs:
+  fist-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print first
+        run: echo "hello ubuntu user"
+      - name: Print second
+        run: echo "done"
